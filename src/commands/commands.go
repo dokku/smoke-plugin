@@ -34,6 +34,8 @@ func main() {
 		fmt.Print(helpContent)
 	case "smoke-test-plugin:test":
 		fmt.Println("triggered smoke-test-plugin from: commands")
+    case "smoke-test-plugin:args":
+        fmt.Printf("triggered smoke-test-plugin:args with args: %v\n", strings.Join(flag.Args(), ", "))
 	default:
 		dokkuNotImplementExitCode, err := strconv.Atoi(os.Getenv("DOKKU_NOT_IMPLEMENTED_EXIT"))
 		if err != nil {
